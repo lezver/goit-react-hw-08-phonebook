@@ -1,0 +1,19 @@
+.phonebook__list {
+  width: fit-content;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+.phonebook__list--info {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+.phonebook__list--error {
+  font-size: 20px;
+  font-weight: bold;
+  color: darkmagenta;
+  margin: 0;
+}
