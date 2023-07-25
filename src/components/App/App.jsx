@@ -20,7 +20,8 @@ export const App = () => {
   console.log(isLoggedIn);
 
   useEffect(() => {
-    if (isLoggedIn) navigate('contacts'); // eslint-disable-next-line
+    if (isLoggedIn) navigate('contacts');
+    // eslint-disable-next-line
   }, [isLoggedIn]);
 
   useEffect(() => {
