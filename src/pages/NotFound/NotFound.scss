@@ -1,0 +1,13 @@
+.phonebook__not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  > h2 {
+    font-size: 32px;
+    color: cadetblue;
+    text-shadow: 1px 1px 1px black, 1px 4px 4px black;
+    margin: 0;
+  }
+}

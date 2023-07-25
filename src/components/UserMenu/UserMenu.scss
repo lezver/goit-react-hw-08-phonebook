@@ -1,0 +1,16 @@
+.phonebook__user-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  font-size: 24px;
+
+  > p {
+    margin: 0;
+
+    > span {
+      color: cadetblue;
+      font-weight: bold;
+    }
+  }
+}

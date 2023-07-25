@@ -10,6 +10,22 @@ body {
   background-color: rgb(209, 209, 209);
 }
 
+html,
+body {
+  height: 100%;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #aaa7a7;
+    &:hover {
+      background: #8f8f8f;
+    }
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -26,4 +42,10 @@ button {
   &:hover {
     background-color: rgb(185, 185, 185);
   }
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }

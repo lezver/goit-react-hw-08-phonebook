@@ -1,16 +1,14 @@
 import { Loader } from 'components/Loader';
 import './ContactForm.scss';
 import Notiflix from 'notiflix';
-import {
-  useAddContactMutation,
-  useGetContactsQuery,
-} from 'redux/contacts/contactApi';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'redux/contacts/operations';
 
 Notiflix.Notify.init({ fontSize: '20px' });
 
 export const ContactForm = () => {
-  const [addContact, resultAdd] = useAddContactMutation();
-  const { data: contacts } = useGetContactsQuery();
+  const dispatch = useDispatch();
+  const contacts = useSelector(state => state.contacts.contacts);
 
   const handleForm = e => {
     e.preventDefault();
@@ -34,7 +32,7 @@ export const ContactForm = () => {
 
     if (!nameCheck) {
       Notiflix.Notify.success('You have a new contact!');
-      addContact(newContact);
+      dispatch(addContact(newContact));
     } else {
       Notiflix.Notify.failure(`${name} is already in contacts.`);
     }
@@ -63,17 +61,13 @@ export const ContactForm = () => {
             required
           />
         </label>
-        {resultAdd.isLoading ? (
-          <Loader />
-        ) : (
-          <button type="submit">Add contact</button>
-        )}
+
+        <button type="submit">Add contact</button>
       </form>
-      {resultAdd.isError && (
-        <p className="phonebook__form--error">
-          Something is wrong, please try again.
-        </p>
-      )}
+
+      <p className="phonebook__form--error">
+        Something is wrong, please try again.
+      </p>
     </>
   );
 };
