@@ -1,5 +1,7 @@
 .phonebook__contacts {
-  max-width: 500px;
+  width: 450px;
+  max-height: 69vh;
+  overflow-y: auto;
   background-color: cadetblue;
 
   padding: 24px;
@@ -22,5 +24,17 @@
   }
   h2 {
     font-size: 32px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #aaa7a7;
+    &:hover {
+      background: #8f8f8f;
+    }
   }
 }
