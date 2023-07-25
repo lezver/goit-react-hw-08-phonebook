@@ -2,10 +2,12 @@ import { useDispatch } from 'react-redux';
 import './Login.scss';
 import { useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
+import { useAuth } from 'hooks';
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { isError } = useAuth();
 
   const handlerForm = e => {
     e.preventDefault();
@@ -20,6 +22,11 @@ const Login = () => {
   };
   return (
     <section className="phonebook__login">
+      {isError && (
+        <p className="phonebook__login-error">
+          ERROR: Invalid password or email
+        </p>
+      )}
       <h2>Log in :</h2>
       <form onSubmit={handlerForm}>
         <label>

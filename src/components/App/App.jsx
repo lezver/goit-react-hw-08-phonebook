@@ -22,7 +22,9 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <Loader />
+    <div className="phonebook__backdrop">
+      <Loader />
+    </div>
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>

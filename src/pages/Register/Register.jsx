@@ -2,10 +2,12 @@ import { useDispatch } from 'react-redux';
 import './Register.scss';
 import { useNavigate } from 'react-router-dom';
 import { register } from 'redux/auth/operations';
+import { useAuth } from 'hooks';
 
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { isError } = useAuth();
 
   const handlerForm = e => {
     e.preventDefault();
@@ -22,6 +24,11 @@ const Register = () => {
   };
   return (
     <section className="phonebook__register">
+      {isError && (
+        <p className="phonebook__register-error">
+          ERROR: Invalid password or email
+        </p>
+      )}
       <h2>Registration Form:</h2>
       <form onSubmit={handlerForm}>
         <label>

@@ -1,14 +1,15 @@
-// import { Loader } from 'components/Loader';
+import { Loader } from 'components';
 import './ContactForm.scss';
 import Notiflix from 'notiflix';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
+import { useContacts } from 'hooks';
 
 Notiflix.Notify.init({ fontSize: '20px' });
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
+  const { contacts } = useContacts();
 
   const handleForm = e => {
     e.preventDefault();
@@ -61,13 +62,8 @@ export const ContactForm = () => {
             required
           />
         </label>
-
         <button type="submit">Add contact</button>
       </form>
-
-      <p className="phonebook__form--error">
-        Something is wrong, please try again.
-      </p>
     </>
   );
 };

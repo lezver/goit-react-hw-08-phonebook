@@ -1,21 +1,21 @@
 .phonebook_item {
   border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+  gap: 24px;
 
-  > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px;
-    gap: 24px;
-    span {
-      font-size: 18px;
-      font-weight: bold;
-      &:first-child {
-        color: rgb(70, 70, 70);
-      }
-      &:nth-child(2) {
-        color: darkmagenta;
-      }
+  span {
+    font-size: 18px;
+    font-weight: bold;
+
+    &:first-child {
+      color: rgb(70, 70, 70);
+    }
+
+    &:nth-child(2) {
+      color: darkmagenta;
     }
   }
 }
