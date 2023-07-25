@@ -1,4 +1,4 @@
-import { Loader } from 'components/Loader';
+// import { Loader } from 'components/Loader';
 import './ContactForm.scss';
 import Notiflix from 'notiflix';
 import { useDispatch, useSelector } from 'react-redux';

@@ -9,10 +9,13 @@ const Login = () => {
 
   const handlerForm = e => {
     e.preventDefault();
+
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
     const login = { email, password };
+
     dispatch(logIn(login));
+
     e.target.reset();
   };
   return (

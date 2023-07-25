@@ -1,10 +1,12 @@
 import './ContactList.scss';
-import { ContactItem, Loader } from 'components';
+import { ContactItem } from 'components';
 import { useSelector } from 'react-redux';
+import { selectContacts } from 'redux/contacts/selectors';
+import { selectFilter } from 'redux/filter/selectors';
 
 export const ContactList = () => {
-  const filter = useSelector(state => state.filter.filter);
-  const contacts = useSelector(state => state.contacts.contacts);
+  const filter = useSelector(selectFilter);
+  const contacts = useSelector(selectContacts);
 
   const searchContact = () =>
     contacts?.filter(contact =>

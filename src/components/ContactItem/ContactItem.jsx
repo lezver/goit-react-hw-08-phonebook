@@ -1,4 +1,4 @@
-import { Loader } from 'components/Loader';
+// import { Loader } from 'components/Loader';
 import './ContactItem.scss';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';

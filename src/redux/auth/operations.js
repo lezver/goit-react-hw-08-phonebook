@@ -43,7 +43,7 @@ export const logOut = createAsyncThunk(
   'auth/logout',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.post('/users/logout');
+      await axios.post('/users/logout');
 
       clearAuthHeader();
     } catch (error) {
@@ -57,11 +57,13 @@ export const refreshUser = createAsyncThunk(
   async (_, { rejectWithValue, getState }) => {
     const { token } = getState().auth;
 
-    if (!token) return;
-
-    setAuthHeader(token);
+    if (token === null) {
+      return rejectWithValue('Unabel to fetch user');
+    }
 
     try {
+      setAuthHeader(token);
+
       const { data } = await axios.get('/users/current');
 
       return data;
