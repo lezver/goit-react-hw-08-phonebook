@@ -1,4 +1,3 @@
-import { Loader } from 'components';
 import './ContactForm.scss';
 import Notiflix from 'notiflix';
 import { useDispatch } from 'react-redux';
