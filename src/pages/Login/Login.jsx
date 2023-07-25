@@ -14,11 +14,16 @@ const Login = () => {
 
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
+    const btn = e.target.elements[2];
+    btn.disabled = true;
+
     const login = { email, password };
 
     dispatch(logIn(login));
 
     e.target.reset();
+
+    setTimeout(() => (btn.disabled = false), 1000);
   };
   return (
     <section className="phonebook__login">

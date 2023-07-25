@@ -15,12 +15,16 @@ const Register = () => {
     const name = e.target.elements.name.value;
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
+    const btn = e.target.elements[3];
+    btn.disabled = true;
 
     const newContact = { name, email, password };
 
     dispatch(register(newContact));
 
     e.target.reset();
+
+    setTimeout(() => (btn.disabled = false), 1000);
   };
   return (
     <section className="phonebook__register">

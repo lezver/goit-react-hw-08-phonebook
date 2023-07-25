@@ -10,11 +10,13 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
   const { contacts } = useContacts();
 
-  const handleForm = e => {
+  const handlerForm = e => {
     e.preventDefault();
 
     const name = e.target.elements.name.value;
     const number = e.target.elements.number.value;
+    const btn = e.target.elements[2];
+    btn.disabled = true;
 
     const newContact = {
       name,
@@ -23,6 +25,8 @@ export const ContactForm = () => {
     checkAddContact(newContact, name);
 
     e.target.reset();
+
+    setTimeout(() => (btn.disabled = false), 1000);
   };
 
   const checkAddContact = (newContact, name) => {
@@ -40,7 +44,7 @@ export const ContactForm = () => {
 
   return (
     <>
-      <form className="phonebook__form" onSubmit={handleForm}>
+      <form className="phonebook__form" onSubmit={handlerForm}>
         <label>
           Name:
           <input
