@@ -2,6 +2,7 @@ import { useAuth } from 'hooks';
 import './UserMenu.scss';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
+import { AiOutlineLogout } from 'react-icons/ai';
 
 export const UserMenu = () => {
   const { user } = useAuth();
@@ -14,6 +15,7 @@ export const UserMenu = () => {
 
       <button type="button" onClick={() => dispatch(logOut())}>
         Logout
+        <AiOutlineLogout size={20} />
       </button>
     </div>
   );

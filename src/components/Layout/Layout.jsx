@@ -3,7 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import './Layout.scss';
 import { Loader } from 'components/Loader';
 import { GiWhiteBook, GiSpellBook, GiArchiveRegister } from 'react-icons/gi';
-import { AiOutlineLogin, AiOutlineLogout } from 'react-icons/ai';
+import { AiOutlineLogin } from 'react-icons/ai';
 import { useAuth } from 'hooks';
 import { UserMenu } from 'components/UserMenu';
 

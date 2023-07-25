@@ -13,4 +13,10 @@
       font-weight: bold;
     }
   }
+
+  > button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
 }
