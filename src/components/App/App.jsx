@@ -1,11 +1,11 @@
 import './App.scss';
 import { Layout, Loader } from 'components';
-import { ProtectedRoute } from 'routes';
+import { ProtectedRoute, RestrictedRoute } from 'routes';
 import { useAuth } from 'hooks';
 import { useEffect } from 'react';
 import { lazy } from 'react';
 import { useDispatch } from 'react-redux';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/operations';
 const Home = lazy(() => import('pages/Home/Home'));
 const Contacts = lazy(() => import('pages/Contacts/Contacts'));
@@ -16,13 +16,6 @@ const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing, isLoggedIn } = useAuth();
-  const navigate = useNavigate();
-  console.log(isLoggedIn);
-
-  useEffect(() => {
-    if (isLoggedIn) navigate('contacts');
-    // eslint-disable-next-line
-  }, [isLoggedIn]);
 
   useEffect(() => {
     dispatch(refreshUser());
@@ -42,8 +35,22 @@ export const App = () => {
             </ProtectedRoute>
           }
         />
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<Login />} />
+        <Route
+          path="register"
+          element={
+            <RestrictedRoute isLoggedIn={isLoggedIn}>
+              <Register />
+            </RestrictedRoute>
+          }
+        />
+        <Route
+          path="login"
+          element={
+            <RestrictedRoute isLoggedIn={isLoggedIn}>
+              <Login />
+            </RestrictedRoute>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
