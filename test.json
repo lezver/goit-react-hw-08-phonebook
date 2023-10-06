@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1234,
+    "year": 2010,
+    "make": "Toyota",
+    "model": "Camry",
+    "type": "Sedan",
+    "img": "https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/toyota_camry.jpg",
+    "description": "The Toyota Camry is a reliable and fuel-efficient car that offers a smooth ride and a spacious interior.",
+    "fuelConsumption": "7.8",
+    "engineSize": "2.5L I4",
+    "accessories": ["Navigation system", "Heated seats", "Backup camera"],
+    "functionalities": [
+      "Cruise control",
+      "Keyless entry",
+      "Lane departure warning"
+    ],
+    "rentalPrice": "$25",
+    "rentalCompany": "Easy Car Rentals",
+    "address": "456 Example Avenue, Lviv, Ukraine",
+    "rentalConditions": "Minimum age: 21\nValid driver's license\nCredit card required",
+    "mileage": 12345
+  },
+  {
+    "id": 5678,
+    "year": 2015,
+    "make": "BMW",
+    "model": "X5",
+    "type": "SUV",
+    "img": "https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/bmw_x5.jpg",
+    "description": "The BMW X5 is a powerful and luxurious SUV that offers a sporty performance and a premium feel.",
+    "fuelConsumption": "11.2",
+    "engineSize": "3.0L I6",
+    "accessories": [
+      "Leather seats",
+      "Panoramic sunroof",
+      "Harman Kardon sound system"
+    ],
+    "functionalities": ["Parking sensors", "Remote start", "Head-up display"],
+    "rentalPrice": "$50",
+    "rentalCompany": "Premium Car Rentals",
+    "address": "789 Example Boulevard, Odessa, Ukraine",
+    "rentalConditions": "Minimum age: 25\nValid driver's license\nSecurity deposit required",
+    "mileage": 6789
+  },
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {}
+]
